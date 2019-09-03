@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h3>Bonjour {{ name }} {{ 2+1 }}</h3>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating" [color]="color">Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item [hidden] = "name== ''">
+      <ion-label text-center>J'accepte les CGV</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+
+    <ion-radio-group>
+      <ion-list-header>
+        Genre
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Homme</ion-label>
+        <ion-radio slot="start"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Femme</ion-label>
+        <ion-radio slot="start"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+
+    <ion-item>
+      <ion-label floating> Choisir un langage</ion-label>
+      <ion-select multiple cancelText="Annuler" okText="Valider" interface="popover">
+        <ion-select-option>Java</ion-select-option>
+        <ion-select-option>Go</ion-select-option>
+        <ion-select-option>Scala</ion-select-option>
+        <ion-select-option>Haskell</ion-select-option>
+        <ion-select-option>Kotlin</ion-select-option>
+      </ion-select>
+
+    </ion-item>
+    <ion-range min="1" max="10" pin="true" step="2" snaps="true"></ion-range>
+    <!-- step va de 2 en 2, snaps aimanté et gradue la ligne et ticks=false retire la graduation dualKnobs=true va donner 2 cuseurs, un max et un min.-->
+
+    <ion-item>
+      <ion-item>Couper le son</ion-item>
+      <ion-toggle slot="start"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
