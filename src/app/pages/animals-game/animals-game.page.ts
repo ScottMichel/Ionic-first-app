@@ -76,6 +76,8 @@ export class AnimalsGamePage implements OnInit {
     }
   ];
 
+  public isReorderDisabled = true; 
+
   private chosenAnimal;
 
   private media;
@@ -134,5 +136,9 @@ export class AnimalsGamePage implements OnInit {
      toast.present();
   }
 
+  doReorder(even){
+    even.detail.complete(this.animals);
+    console.log(this.animals);
+  }
 
 }
